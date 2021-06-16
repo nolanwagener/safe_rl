@@ -1,0 +1,3 @@
+intv_lim: 0.0
+cost_smoothing: 0.
+only_q: True

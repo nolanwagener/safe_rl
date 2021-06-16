@@ -1,0 +1,7 @@
+Cls: PointIntervenerNetwork
+intv_lim: 0.08
+only_q: False 
+vnet1_path: pt/vnet1_smooth_0.0.pt
+vnet2_path: pt/vnet2_smooth_0.0.pt
+qnet1_path: pt/qnet1_smooth_0.0.pt
+qnet2_path: pt/qnet2_smooth_0.0.pt
