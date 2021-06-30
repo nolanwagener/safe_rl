@@ -26,8 +26,8 @@ Code Architecture:
 - `extra_envs`: This consists of three folders:
 	- `envs`: The point and Half-Cheetah environments.
 	- `wrappers`: Defines the intervention wrapper. Whenever we `step` the wrapped environment, we check whether the agent should be intervened. If not, we `step` the internal environment. Otherwise, we return a NaN observation and set the `done` flag to `True`. If the intervener gives a safe action, the returned `info` dictionary includes the `step` output `(o, r, d, info)` when the safe action from the intervener is applied to the internal environment.
-	- `intervener`: Intervention rules G = (Q, \mu, \eta) for the point and Half-Cheetah environments. The rule contains a `should_intervene` method which uses a heuristic or an advantage-based rule to decide whether a given action requires intervention. The `safe_action` method returns a safe action from \mu.
-		- Point: The safe policy \mu is a deceleration policy. We have two interveners:
+	- `intervener`: Intervention rules G = (Q, μ, η) for the point and Half-Cheetah environments. The rule contains a `should_intervene` method which uses a heuristic or an advantage-based rule to decide whether a given action requires intervention. The `safe_action` method returns a safe action from μ.
+		- Point: The safe policy μ is a deceleration policy. We have two interveners:
 			- `PointIntervenerNetwork`: Uses value and Q-value approximators to build the advantage function estimate. The networks are loaded using PyTorch.
 			- `PointIntervenerRollout`: Rolls out the deceleration policy on a model of the environment to build the advantage function estimate.
 		- Half-Cheetah (not yet included in repo):
