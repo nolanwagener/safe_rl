@@ -42,3 +42,17 @@ Scripts
 -------
 All training scripts are located in `/scripts/` within two 'script.sh' files. After running the scripts, the results are stored in `/data`.
 Results can be plotted using the "Spinning Up" plotting tool (with `spinup.run` replaced with `safe_rl.run`): https://spinningup.openai.com/en/latest/user/plotting.html
+
+Citing
+------
+If you use this repo in your research, please cite:
+```
+@inproceedings{wagener2021safe,
+  title={{Safe Reinforcement Learning Using Advantage-Based Intervention}},
+  author={Wagener, Nolan and Boots, Byron and Cheng, Ching-An},
+  booktitle={International Conference on Machine Learning},
+  pages={10630--10640},
+  year={2021},
+  organization={PMLR}
+}
+```
