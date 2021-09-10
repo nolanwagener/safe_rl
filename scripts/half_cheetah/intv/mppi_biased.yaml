@@ -1,0 +1,17 @@
+sim_env_name: 'mjmpc:half_cheetah-v0'
+sim_env_asset_path: assets/half_cheetah_biased.xml
+intv_lim: 0.2
+mppi_params:
+  horizon: 16
+  init_cov: 1.
+  filter_coeffs: [0.25, 0.8, 0.]
+  gamma: 1.
+  n_iters: 1
+  step_size: 1.
+  lam: 0.2
+  alpha: 1.
+  num_cpu: 8
+  particles_per_cpu: 8
+  base_action: 'null'
+  time_based_weights: False
+  use_zero_control_seq: True

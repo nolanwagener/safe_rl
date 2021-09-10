@@ -20,6 +20,13 @@ Installation Instructions:
 cd extra_envs
 pip install -e .
 ```
+3. Install the [`mjmpc`](https://github.com/mohakbhardwaj/mjmpc/tree/nolan/safe_rl) and [`mjrl`](https://github.com/aravindr93/mjrl) repos for the MPC-based Half-Cheetah intervention.
+```
+git clone https://github.com/mohakbhardwaj/mjmpc.git -b nolan/safe_rl
+pip install git+https://github.com/aravindr93/mjrl.git@master#egg=mjrl
+cd mjmpc
+pip install -e .
+```
 
 Code Architecture:
 ------------------
@@ -30,7 +37,7 @@ Code Architecture:
 		- Point: The safe policy μ is a deceleration policy. We have two interveners:
 			- `PointIntervenerNetwork`: Uses value and Q-value approximators to build the advantage function estimate. The networks are loaded using PyTorch.
 			- `PointIntervenerRollout`: Rolls out the deceleration policy on a model of the environment to build the advantage function estimate.
-		- Half-Cheetah (not yet included in repo):
+		- Half-Cheetah:
 		    - `HalfCheetahHeuristicIntervener`: Merely checks if the predicted next state would result in a constraint violation. The episode immediately terminates upon intervention.
 			- `HalfCheetahMpcIntervener`: Uses a modeled environment and sampling-based MPC to form the safe policy. Similarly builds an advantage-function estimate using MPC. Upon intervention, can either reset the environment or return an action from MPC.
 - `safe_rl/algos`: 
