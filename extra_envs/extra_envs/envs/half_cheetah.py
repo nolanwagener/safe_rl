@@ -1,7 +1,7 @@
 import numpy as np
 from gym import utils
 from gym.envs.mujoco import mujoco_env
-from extra_envs.intervener import HalfCheetahIntervener
+from extra_envs.intervener import HalfCheetahMpcIntervener
 
 class HalfCheetahEnv(mujoco_env.MujocoEnv, utils.EzPickle):
 

@@ -21,7 +21,7 @@ def mlp(sizes, activation, output_activation=nn.Identity):
         layers += [nn.Linear(sizes[j], sizes[j+1]), act()]
     return nn.Sequential(*layers)
 
-class HalfCheetahIntervener(Intervener):
+class HalfCheetahMpcIntervener(Intervener):
     def __init__(self, mppi_params, sim_env_name='mjmpc:half_cheetah-v0',
                  sim_env_asset_path=None, mode=Intervener.MODE.TERMINATE, intv_lim=0.01,
                  cost_smoothing=0.05, gamma=0.99, only_q=False, **kwargs):

@@ -8,7 +8,7 @@ import safe_rl.algos.cppo.core as core
 from safe_rl.utils.mpi_tools import mpi_fork
 from safe_rl.utils.run_utils import setup_logger_kwargs
 from extra_envs.wrappers import Intervention
-from extra_envs.intervener import Intervener, HalfCheetahHeuristicIntervener, HalfCheetahIntervener
+from extra_envs.intervener import Intervener, HalfCheetahHeuristicIntervener, HalfCheetahMpcIntervener
 
 parser = argparse.ArgumentParser()
 
@@ -73,7 +73,7 @@ def env_fn():
     if do_intv:
         IntervenerCls = (HalfCheetahHeuristicIntervener
                          if args.heuristic_intv
-                         else HalfCheetahIntervener)
+                         else HalfCheetahMpcIntervener)
     else:
         IntervenerCls = Intervener
     intervener = IntervenerCls(**intv_kwargs)

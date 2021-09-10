@@ -74,7 +74,7 @@ def env_fn():
     if do_intv:
         IntervenerCls = (HalfCheetahHeuristicIntervener
                          if args.heuristic_intv
-                         else HalfCheetahIntervener)
+                         else HalfCheetahMpcIntervener)
     else:
         IntervenerCls = Intervener
     intervener = IntervenerCls(**intv_kwargs)
