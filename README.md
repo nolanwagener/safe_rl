@@ -4,8 +4,8 @@ Safe Reinforcement Learning Using Advantage-Based Intervention
 Source code for [Safe Reinforcement Learning Using Advantage-Based Intervention](https://arxiv.org/abs/2106.09110).
 Code based on [OpenAI's Spinning Up](https://spinningup.openai.com/).
 
-Installation Instructions:
---------------------------
+Installation Instructions
+-------------------------
 1. Except for the notes below, follow the installation instructions here: https://spinningup.openai.com/en/latest/user/installation.html
     - Replace `conda create -n spinningup python=3.6` and `conda activate spinningup` with `conda create -n safe python=3.6` and `conda activate safe`, respectively.
 	- Instead of the "Installing Spinning Up" section, run the following:
@@ -28,8 +28,8 @@ cd mjmpc
 pip install -e .
 ```
 
-Code Architecture:
-------------------
+Code Architecture
+-----------------
 - `extra_envs`: This consists of three folders:
 	- `envs`: The point and Half-Cheetah environments.
 	- `wrappers`: Defines the intervention wrapper. Whenever we `step` the wrapped environment, we check whether the agent should be intervened. If not, we `step` the internal environment. Otherwise, we return a NaN observation and set the `done` flag to `True`. If the intervener gives a safe action, the returned `info` dictionary includes the `step` output `(o, r, d, info)` when the safe action from the intervener is applied to the internal environment.
